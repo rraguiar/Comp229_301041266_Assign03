@@ -1,0 +1,140 @@
+﻿.page {
+    background-image: url('../images/gradientBG2.png');
+    font-family: Arial, Helvetica, sans-serif;
+    margin-right: auto;
+    margin-left: auto;
+    width: 980px;
+    position: relative;
+}
+
+header {
+    background-repeat: no-repeat;
+    background-color: whitesmoke;
+    height: 100px;
+}
+
+    ul li {
+        display: inline-block;
+        text-decoration: none;
+        list-style-type: none;
+    }
+
+nav ul li a {
+    text-decoration: none;
+    color: black;
+    padding-left: 17px;
+    padding-right: 17px;
+    text-decoration: none;
+    list-style-type: none;
+}
+
+#logo {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    left: 10px;
+    top: 10px;
+}
+
+#welcomeTitle {
+    position: absolute;
+    left: 125px;
+    top: 0px;
+}
+
+#content {
+    text-align: justify;
+    position: relative;
+    top: 10px;
+}
+
+#pictureDiv {
+    position: relative;
+    width: 530px;
+    background-color: whitesmoke;
+}
+
+h6 {
+    height:10px;
+}
+
+#picture {
+    padding: 4px 5px 4px 5px;
+}
+
+#text {
+    position: absolute;
+    top: 4px;
+    left: 535px;
+    width: 440px;
+    background-color: whitesmoke;
+    padding: 8px;
+}
+
+.credits {
+    font-size:xx-small;
+}
+
+table {
+    width: 800px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+th {
+    text-align: center;
+}
+
+td, th {
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+    background-color: whitesmoke;
+}
+
+#pageFooter {
+    position: relative;
+    top: 30px;
+    left: 0px;
+    height: 80px;
+    background-color: whitesmoke;
+    background-repeat: no-repeat;
+    padding: 5px;
+}
+
+footer nav ul li {
+    display: inline-block;
+}
+
+    footer nav ul li hover {
+        display: inline-block;
+    }
+
+h6 {
+    padding-left: 5px;
+}
+
+#copyright {
+    font-size: xx-small;
+    font-weight: lighter;
+}
+
+.credits {
+    font-weight: lighter;
+    float: right;
+}
+
+.navigationLinks {
+    text-decoration: none;
+    color: black;
+    background-color: whitesmoke;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+    .navigationLinks:hover {
+        background-color: gainsboro;
+        text-decoration: none;
+        color: black;
+        padding-left: 15px;
+        padding-right: 15px;
+    }

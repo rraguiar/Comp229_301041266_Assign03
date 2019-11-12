@@ -1,0 +1,28 @@
+﻿@model IEnumerable<Recipe>
+
+@{
+    ViewBag.Title = "List of Recipes";
+}
+
+<h3>
+    All Recipes:
+</h3>
+<table>
+    <thead>
+        <tr>
+            <th width="100px">Recipe #</th>
+            <th width="225px">Category</th>
+            <th>Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Recipe item in Model)
+        {
+            <tr>
+                <td>@item.RecipeID</td>
+                <td>@item.RecipeCategory</td>
+                <td><a class="navigationLinks" asp-controller="Recipe" asp-action="RecipeDetails" asp-route-RecipeID="@item.RecipeID">@item.RecipeName</a></td>
+            </tr>
+        }
+    </tbody>
+</table>

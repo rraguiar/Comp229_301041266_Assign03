@@ -1,0 +1,27 @@
+﻿@model List<Comp229_301041266_Assign03.Models.ReviewRecipe>
+
+
+@{
+    ViewBag.Title = "List of all Reviews";
+}
+
+<h3>
+    All Reviews:
+</h3>
+<table>
+    <thead>
+        <tr>
+            <th width="100px">Review #</th>
+            <th width="225px">Review Content</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (ReviewRecipe item in Model)
+        {
+            <tr>
+                <td>@item.ID</td>
+                <td>@item.ReviewContent</td>
+            </tr>
+        }
+    </tbody>
+</table>

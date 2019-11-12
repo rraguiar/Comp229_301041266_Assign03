@@ -1,0 +1,15 @@
+﻿@model Comp229_301041266_Assign03.Models.ReviewRecipe
+
+<form asp-action="ReviewAdd" method="Post">
+
+    <input type="hidden" asp-for="RecipeNumber" value="@ViewBag.RecipeNumber" />
+    <div>
+        <label asp-for="ReviewContent">Review:</label>
+        <input asp-for="ReviewContent" />
+    </div>
+    <div>
+        <button type="submit">Save Review</button>
+        <button type="reset">Clear Fields</button>
+        <button asp-action="List">Cancel</button>
+    </div>
+</form>
