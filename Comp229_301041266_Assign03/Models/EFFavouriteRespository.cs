@@ -20,6 +20,7 @@ namespace Comp229_301041266_Assign03.Models
             Favourite newFav = new Favourite();
             newFav.RecID = fav.RecID;
             newFav.fvname = fav.fvname;
+            newFav.user = fav.user;
             context.Add(newFav);
             context.SaveChanges();
         }

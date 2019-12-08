@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Identity;
 using Comp229_301041266_Assign03.Models;
 using Microsoft.AspNetCore.Authorization;
 
@@ -12,13 +13,21 @@ namespace Comp229_301041266_Assign03.Controllers
     {
 
         private IFavouriteRecipeRespository favRepository;
+        private UserManager<IdentityUser> userManager;
 
-        public FavouriteController(IFavouriteRecipeRespository repo)
+        public FavouriteController(IFavouriteRecipeRespository repo, UserManager<IdentityUser> userMgr)
         {
             favRepository = repo;
+            userManager = userMgr;
         }
         public ViewResult AddedFavourites()
-            => View(favRepository.FavRecipe);
+        {
+            string name = userManager.GetUserId(HttpContext.User);
+            List<Favourite> favs = new List<Favourite>();
+            favs.AddRange(favRepository.FavRecipe.Where(item => item.user == name));
+            return View(favs);
+        }
+            //=> View(favRepository.FavRecipe);
 
         [HttpGet]
         [Authorize]
@@ -30,6 +39,8 @@ namespace Comp229_301041266_Assign03.Controllers
         [HttpPost]
         public ViewResult FavAdd(Favourite fav)
         {
+            string name = userManager.GetUserId(HttpContext.User);
+            fav.user = name;
             favRepository.addFavRecipe(fav);
             return View("FavAdded");
         }

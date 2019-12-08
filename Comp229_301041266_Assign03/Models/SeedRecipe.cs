@@ -106,13 +106,15 @@ namespace Comp229_301041266_Assign03.Models
                     new Favourite
                     {
                         RecID = 3,
-                        fvname = "Best Dinner"
+                        fvname = "Best Dinner",
+                        user= "dd2957ce-f10f-48ad-a04d-d64dfaef00ed"
 
                     },
                     new Favourite
                     {
                         RecID = 2,
-                        fvname = "Can't stop Loving"
+                        fvname = "Can't stop Loving",
+                        user= "d669d4e9-f496-45e0-b997-e3a941f85cef"
                     }
                     );
                 context.SaveChanges();
