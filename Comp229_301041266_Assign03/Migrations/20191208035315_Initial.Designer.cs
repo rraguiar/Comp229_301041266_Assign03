@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Comp229_301041266_Assign03.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20191208033025_Initial")]
+    [Migration("20191208035315_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -29,6 +29,8 @@ namespace Comp229_301041266_Assign03.Migrations
                     b.Property<int>("RecID");
 
                     b.Property<string>("fvname");
+
+                    b.Property<string>("user");
 
                     b.HasKey("FavID");
 

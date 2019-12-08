@@ -14,7 +14,8 @@ namespace Comp229_301041266_Assign03.Migrations
                     FavID = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     RecID = table.Column<int>(nullable: false),
-                    fvname = table.Column<string>(nullable: true)
+                    fvname = table.Column<string>(nullable: true),
+                    user = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {

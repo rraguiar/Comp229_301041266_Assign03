@@ -28,6 +28,8 @@ namespace Comp229_301041266_Assign03.Migrations
 
                     b.Property<string>("fvname");
 
+                    b.Property<string>("user");
+
                     b.HasKey("FavID");
 
                     b.ToTable("FavRecipe");
