@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Comp229_301041266_Assign03.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20191111170742_Initial")]
+    [Migration("20191208033025_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -20,27 +20,48 @@ namespace Comp229_301041266_Assign03.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+            modelBuilder.Entity("Comp229_301041266_Assign03.Models.Favourite", b =>
+                {
+                    b.Property<int>("FavID")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("RecID");
+
+                    b.Property<string>("fvname");
+
+                    b.HasKey("FavID");
+
+                    b.ToTable("FavRecipe");
+                });
+
             modelBuilder.Entity("Comp229_301041266_Assign03.Models.Recipe", b =>
                 {
                     b.Property<int>("RecipeID")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("RecipeCategory");
+                    b.Property<string>("RecipeCategory")
+                        .IsRequired();
 
-                    b.Property<string>("RecipeCookTime");
+                    b.Property<string>("RecipeCookTime")
+                        .IsRequired();
 
-                    b.Property<string>("RecipeIngredient");
+                    b.Property<string>("RecipeIngredient")
+                        .IsRequired();
 
                     b.Property<string>("RecipeIngredientQty");
 
                     b.Property<string>("RecipeIngredientUnit");
 
-                    b.Property<string>("RecipeName");
+                    b.Property<string>("RecipeName")
+                        .IsRequired();
 
-                    b.Property<string>("RecipeNarrative");
+                    b.Property<string>("RecipeNarrative")
+                        .IsRequired();
 
-                    b.Property<string>("RecipeNumberPortions");
+                    b.Property<string>("RecipeNumberPortions")
+                        .IsRequired();
 
                     b.HasKey("RecipeID");
 
@@ -55,7 +76,8 @@ namespace Comp229_301041266_Assign03.Migrations
 
                     b.Property<int>("RecipeNumber");
 
-                    b.Property<string>("ReviewContent");
+                    b.Property<string>("ReviewContent")
+                        .IsRequired();
 
                     b.HasKey("ID");
 
