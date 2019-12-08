@@ -12,10 +12,10 @@
     <p>Ingredients: @Model.RecipeIngredient</p>
     
     <p>Instructions:<br />@Model.RecipeNarrative</p>
-    <a class="navigationLinks" asp-controller="Recipe" asp-action="RecipeEdit" asp-route-id="@Model.RecipeID">Edit Recipe</a>
-    <a class="navigationLinks" asp-controller="Recipe" asp-action="DeleteRecipe" asp-route-id="@Model.RecipeID">Delete Recipe</a>
+    <a class="btn btn-light btn-outline-dark" asp-controller="Recipe" asp-action="RecipeEdit" asp-route-id="@Model.RecipeID">Edit Recipe</a>
+    <a class="btn btn-light btn-outline-dark" asp-controller="Recipe" asp-action="DeleteRecipe" asp-route-id="@Model.RecipeID">Delete Recipe</a>
     <br />
     <br />
-    <a class="navigationLinks" asp-controller="Recipe" asp-action="ReviewAdd" asp-route-id="@Model.RecipeID">Add Review</a>
-    <a class="navigationLinks" asp-controller="Recipe" asp-action="ViewReviews" asp-route-id="@Model.RecipeID">View All Reviews</a>
+    <a class="btn btn-light btn-outline-dark" asp-controller="Recipe" asp-action="ReviewAdd" asp-route-id="@Model.RecipeID">Add Review</a>
+    <a class="btn btn-light btn-outline-dark" asp-controller="Recipe" asp-action="ViewReviews" asp-route-id="@Model.RecipeID">View All Reviews</a>
 </div>

@@ -21,13 +21,14 @@ namespace Comp229_301041266_Assign03.Controllers
             return View();
         }
 
-        public ViewResult RecipeDetails(int RecipeID)
+        /*public ViewResult RecipeDetails(int RecipeID)
         {            
-            return View(RecipesRepository.Recipes.Where( item => item.RecipeID == RecipeID));
+            return View(RecipesRepository.Recipes.Where( item => item.RecipeID == RecipeID).FirstOrDefault());
         }
-        public ViewResult RecipesList(Recipe recipes)
+
+        /*public ViewResult RecipesList(Recipe recipes)
         {
             return View(RecipesRepository.Recipes);
-        }
+        }*/
     }
 }

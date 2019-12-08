@@ -45,8 +45,7 @@ namespace Comp229_301041266_Assign03.Models
         {
             EFReviewRecipeRepository efReviewRepository = new EFReviewRecipeRepository(context);
             efReviewRepository.deleteReviewRecipe(RecipeID);
-            Recipe dbEntry = context.Recipes
-.FirstOrDefault(p => p.RecipeID == RecipeID);
+            Recipe dbEntry = context.Recipes.FirstOrDefault(p => p.RecipeID == RecipeID);
             if (dbEntry != null)
             {
                 context.Recipes.Remove(dbEntry);

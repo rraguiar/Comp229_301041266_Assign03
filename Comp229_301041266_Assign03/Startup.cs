@@ -9,6 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Comp229_301041266_Assign03.Models;
 using Microsoft.Extensions.Configuration;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
 
 namespace Comp229_301041266_Assign03
 {
@@ -30,6 +31,13 @@ namespace Comp229_301041266_Assign03
                 Configuration["Data:RecipeBook:ConnectionString"]
                 )
                 );
+
+            services.AddDbContext<AppIdentityDbContext>(options => options.UseSqlServer(
+                Configuration["Data:RecipeBookIdentity:ConnectionString"]));
+
+            services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores
+                <AppIdentityDbContext>().AddDefaultTokenProviders();
+
             services.AddTransient<IRecipeRepository, EFRecipeRepository>();
             services.AddTransient<IReviewRecipeRepository, EFReviewRecipeRepository>();
             services.AddMvc();
@@ -43,6 +51,7 @@ namespace Comp229_301041266_Assign03
                 app.UseDeveloperExceptionPage();
             }
             app.UseStatusCodePages();
+            app.UseAuthentication();
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
@@ -52,6 +61,7 @@ namespace Comp229_301041266_Assign03
             
             app.UseStaticFiles();
             SeedRecipe.EnsurePopulated(app);
+            IdentitySeedData.EnsurePopulated(app);
 
         }
     }

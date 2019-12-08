@@ -6,6 +6,11 @@
     <title>@ViewBag.Title</title>
     <link rel="stylesheet" href="~/css/style.css" />
     <link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap.min.css" />
+    <style>        .input-validation-error {
+            border-color: red;
+            background-color: #fee;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -19,25 +24,30 @@
                     <li><a class="navigationLinks" asp-controller="Home" asp-action="Index">Home</a></li>
                     <li><a class="navigationLinks" asp-controller="Recipe" asp-action="RecipeAdd">Share your Recipe</a></li>
                     <li><a class="navigationLinks" asp-controller="Recipe" asp-action="List">See all Recipes</a></li>
-                    <li><a class="navigationLinks" asp-controller="Home" asp-action="ProfilePage">Profile</a></li>
+                    <li><a class="navigationLinks" asp-controller="Account" asp-action="Login">Profile</a></li>
                     <li><a class="navigationLinks" href="mailto:johndoe@centennialcollege.ca">Contact</a></li>
-                </ul>                
+                </ul>
             </nav>
         </div>
     </header>
-    <div id="allPage">
-        @RenderBody()
-    </div>
-    <footer id="pageFooter">
-        <nav>
-            <ul>
-                <li><a class="navigationLinks" asp-controller="Home" asp-action="Index">Home</a></li>
-                <li><a class="navigationLinks" href="mailto:johndoe@centennialcollege.ca">Contact</a></li>
-            </ul>
-        </nav>
-        <p id="copyright">
-            &copy;&nbsp;Copyright Rafael Rodrigues de Aguiar - Student# 301041266 - COMP229 - Assignment 1
-            <span class="credits"> Logo made by <a href="https://www.designevo.com/logo-maker/" title="Free Online Logo Maker">DesignEvo free logo creator</a></span></p>
-    </footer>
+        @if (TempData["message"] != null)
+        {
+            <div class="alert alert-success">@TempData["message"]</div>
+        }
+        <div id="allPage">
+            @RenderBody()
+        </div>
+        <footer id="pageFooter">
+            <nav>
+                <ul>
+                    <li><a class="navigationLinks" asp-controller="Home" asp-action="Index">Home</a></li>
+                    <li><a class="navigationLinks" href="mailto:johndoe@centennialcollege.ca">Contact</a></li>
+                </ul>
+            </nav>
+            <p id="copyright">
+                &copy;&nbsp;Copyright Rafael Rodrigues de Aguiar - Student# 301041266 - COMP229 - Assignment 1
+                <span class="credits"> Logo made by <a href="https://www.designevo.com/logo-maker/" title="Free Online Logo Maker">DesignEvo free logo creator</a></span>
+            </p>
+        </footer>
     </body>
-    </html>
+</html>

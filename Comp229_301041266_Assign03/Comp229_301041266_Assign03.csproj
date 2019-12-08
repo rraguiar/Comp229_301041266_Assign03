@@ -5,6 +5,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="Views\Recipe\DeleteRecipe.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Models\ViewModels\" />
     <Folder Include="wwwroot\images\" />
   </ItemGroup>
 

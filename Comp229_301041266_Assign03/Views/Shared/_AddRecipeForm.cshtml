@@ -2,51 +2,66 @@
 @{
     
 }
+<div class="p-2 row">
+    <div class="col">
+        <h3>@ViewBag.Title</h3>
+    </div>
+    <div class="col-2">
+        <a class="btn btn-light btn-outline-dark" asp-action="..\Account\Logout" asp-controller="Account">Logout</a>
+    </div>
+</div>
 <form asp-action="RecipeAdd" method="Post">
     @if (Model != null)
     {
         <input type="hidden" asp-for="RecipeID" value="@Model.RecipeID" />
     }
-    <div>
-        <label asp-for="RecipeName">Recipe Name:</label>
-        <input asp-for="RecipeName" />
-    </div>
-    <div>
-        <label asp-for="RecipeNumberPortions">Serves:</label>
-        <input asp-for="RecipeNumberPortions" />
-        <spam>persons</spam>
-    </div>
-    <div>
-        <label asp-for="RecipeCategory">Category:</label>
-        <select asp-for="RecipeCategory">
-            <option value="">Choose a category</option>
-            <option value="Appetizers, Beverages">Appetizers, Beverages</option>
-            <option value="Soups, Salads">Soups, Salads</option>
-            <option value="Vegetarian">Vegetarian</option>
-            <option value="Main Dishes">Main Dishes</option>
-            <option value="Breads, Rolls">Breads, Rolls</option>
-            <option value="Desserts">Desserts</option>
-            <option value="Miscellaneous">Miscellaneous</option>
-        </select>
-    </div>
-    <div>
-        <label asp-for="RecipeCookTime">Time to cook:</label>
-        <input asp-for="RecipeCookTime" />
-        <spam>minutes</spam>
-    </div>
-    <div>
-        <label asp-for="RecipeIngredient">Ingredients: (ALT+Enter for new line)</label>
-        <input asp-for="RecipeIngredient" />
-    </div>
-    <div>
-        <label asp-for="RecipeNarrative">Recipe:</label>
-        <input asp-for="RecipeNarrative" />
-    </div>
+        <div>
+            <label asp-for="RecipeName">Recipe Name:</label>
+            <div><span asp-validation-for="RecipeName" class="text-danger"></span></div>
+            <input asp-for="RecipeName" />
+        </div>
+        <div>
+            <label asp-for="RecipeNumberPortions">Serves:</label>
+            <div><span asp-validation-for="RecipeNumberPortions" class="text-danger"></span></div>
+            <input asp-for="RecipeNumberPortions" />
+            <spam>persons</spam>
+        </div>
+        <div>
+            <label asp-for="RecipeCategory">Category:</label>
+            <div><span asp-validation-for="RecipeCategory" class="text-danger"></span></div>
+            <select asp-for="RecipeCategory">
+                <option value="">Choose a category</option>
+                <option value="Appetizers, Beverages">Appetizers, Beverages</option>
+                <option value="Soups, Salads">Soups, Salads</option>
+                <option value="Vegetarian">Vegetarian</option>
+                <option value="Main Dishes">Main Dishes</option>
+                <option value="Breads, Rolls">Breads, Rolls</option>
+                <option value="Desserts">Desserts</option>
+                <option value="Miscellaneous">Miscellaneous</option>
+            </select>
+        </div>
+        <div>
+            <label asp-for="RecipeCookTime">Time to cook:</label>
+            <div><span asp-validation-for="RecipeCookTime" class="text-danger"></span></div>
+            <input asp-for="RecipeCookTime" />
+            <spam>minutes</spam>
+        </div>
+        <div>
+            <label asp-for="RecipeIngredient">Ingredients: (ALT+Enter for new line)</label>
+            <div><span asp-validation-for="RecipeIngredient" class="text-danger"></span></div>
+            <input asp-for="RecipeIngredient" />
+        </div>
+        <div>
+            <label asp-for="RecipeNarrative">Recipe:</label>
+            <div><span asp-validation-for="RecipeNarrative" class="text-danger"></span></div>
+            <input asp-for="RecipeNarrative" />
+        </div>
     <!-- This form needs improvement on the class and the way the ingredientes, quantitys and units are 
         presented.-->
+    <br />
     <div>
-        <button type="submit">Save Recipe</button>
-        <button type="reset">Clear Fields</button>
-        <button asp-action="..\Home\Index">Cancel</button>
+        <button class="btn btn-light btn-outline-dark" type="submit">Save Recipe</button>
+        <button class="btn btn-light btn-outline-dark" type="reset">Clear Fields</button>
+        <button class="btn btn-light btn-outline-dark" asp-action="..\Home\Index">Cancel</button>
     </div>
 </form>
