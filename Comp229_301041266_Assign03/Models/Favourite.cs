@@ -13,5 +13,6 @@ namespace Comp229_301041266_Assign03.Models
         public int FavID { get; set; }
         public int RecID { get; set; }
         public string fvname { get; set; }
+        public string user { get; set; }
     }
 }
