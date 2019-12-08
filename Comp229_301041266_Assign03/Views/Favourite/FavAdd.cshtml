@@ -1,0 +1,14 @@
+﻿@model Comp229_301041266_Assign03.Models.Favourite
+
+<form asp-action="FavAdd" method="Post">
+    <input type="hidden" asp-for="RecID" value="@ViewBag.RecID" />
+    <div>
+        <label asp-for="fvname">Favourite Name</label>
+        <input asp-for="fvname" />
+    </div>
+    <div>
+        <button type="submit">Save Review</button>
+        <button type="reset">Clear Fields</button>
+        <button asp-action="List">Cancel</button>
+    </div>
+</form>

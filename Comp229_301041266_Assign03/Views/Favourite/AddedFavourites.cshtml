@@ -1,0 +1,29 @@
+﻿@model IEnumerable<Favourite>
+@{
+    ViewData["Title"] = "AddedFavourites";
+}
+
+<h2>Favourites</h2>
+<table>
+    <thead>
+        <tr>
+            <th width="100px">Favourite #</th>
+            <th width="225px">Recipe #</th>
+            <th>Favourite Name</th>
+            <th>Delete Favourite</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Favourite item in Model)
+        {
+            <tr>
+                <td>@item.FavID</td>
+                <td>@item.RecID</td>
+                <td><a class="navigationLinks" asp-controller="Recipe" asp-action="RecipeDetails" asp-route-RecipeID="@item.RecID">@item.fvname</a></td>
+                <td><a class="navigationLinks" asp-controller="Favourite" asp-action="DeleteFavourite" asp-route-id="@item.FavID">Remove</a></td>
+
+            </tr>
+        }
+    </tbody>
+</table>
+

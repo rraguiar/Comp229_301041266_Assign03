@@ -102,6 +102,19 @@ namespace Comp229_301041266_Assign03.Models
                     }
                     );
 
+                context.FavRecipe.AddRange(
+                    new Favourite
+                    {
+                        RecID = 3,
+                        fvname = "Best Dinner"
+
+                    },
+                    new Favourite
+                    {
+                        RecID = 2,
+                        fvname = "Can't stop Loving"
+                    }
+                    );
                 context.SaveChanges();
             }
         }

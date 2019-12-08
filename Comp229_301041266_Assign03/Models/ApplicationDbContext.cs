@@ -15,5 +15,6 @@ namespace Comp229_301041266_Assign03.Models
 
         public DbSet<Recipe> Recipes {get; set;}
         public DbSet<ReviewRecipe> Reviews { get; set; }
+        public DbSet<Favourite> FavRecipe { get; set; }
     }
 }

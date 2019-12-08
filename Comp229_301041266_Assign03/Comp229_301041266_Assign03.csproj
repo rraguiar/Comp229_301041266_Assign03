@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Models\SeedRecipe.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Remove="Views\Recipe\DeleteRecipe.cshtml" />
   </ItemGroup>
 
