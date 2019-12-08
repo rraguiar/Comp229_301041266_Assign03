@@ -4,13 +4,13 @@
 }
 <div>
     <h2 class="textCenter">Recipe details</h2>
-        <p>Recipe Name: @Model.RecipeName</p>
-        <span style="display: none">Id: @Model.RecipeID</span>
+    <p>Recipe Name: @Model.RecipeName</p>
+    <span style="display: none">Id: @Model.RecipeID</span>
     <p>Category: @Model.RecipeCategory</p>
     <p>Portions: @Model.RecipeNumberPortions</p>
     <p>Aprox. Time to cook: @Model.RecipeCookTime <spam>minutes</spam></p>
     <p>Ingredients: @Model.RecipeIngredient</p>
-    
+
     <p>Instructions:<br />@Model.RecipeNarrative</p>
     <a class="btn btn-light btn-outline-dark" asp-controller="Recipe" asp-action="RecipeEdit" asp-route-id="@Model.RecipeID">Edit Recipe</a>
     <a class="btn btn-light btn-outline-dark" asp-controller="Recipe" asp-action="DeleteRecipe" asp-route-id="@Model.RecipeID">Delete Recipe</a>
@@ -18,4 +18,5 @@
     <br />
     <a class="btn btn-light btn-outline-dark" asp-controller="Recipe" asp-action="ReviewAdd" asp-route-id="@Model.RecipeID">Add Review</a>
     <a class="btn btn-light btn-outline-dark" asp-controller="Recipe" asp-action="ViewReviews" asp-route-id="@Model.RecipeID">View All Reviews</a>
+    <a class="navigationLinks" asp-controller="Favourite" asp-action="FavAdd" asp-route-id="@Model.RecipeID">Add To Favourites</a>
 </div>
