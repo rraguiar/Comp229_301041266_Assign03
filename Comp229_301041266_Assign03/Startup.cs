@@ -61,7 +61,7 @@ namespace Comp229_301041266_Assign03
             });
             
             app.UseStaticFiles();
-            //SeedRecipe.EnsurePopulated(app);
+            SeedRecipe.EnsurePopulated(app);
             IdentitySeedData.EnsurePopulated(app);
 
         }
