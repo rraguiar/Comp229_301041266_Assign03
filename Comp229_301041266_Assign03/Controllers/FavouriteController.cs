@@ -20,6 +20,8 @@ namespace Comp229_301041266_Assign03.Controllers
             favRepository = repo;
             userManager = userMgr;
         }
+
+        [Authorize]
         public ViewResult AddedFavourites()
         {
             string name = userManager.GetUserId(HttpContext.User);
@@ -42,16 +44,23 @@ namespace Comp229_301041266_Assign03.Controllers
             string name = userManager.GetUserId(HttpContext.User);
             fav.user = name;
             favRepository.addFavRecipe(fav);
-            return View("FavAdded");
+            TempData["message"] = $"Favourite \"{fav.fvname}\" has been Added";
+            List<Favourite> favs = new List<Favourite>();
+            favs.AddRange(favRepository.FavRecipe.Where(item => item.user == name));
+            return View("AddedFavourites",favs);
         }
 
         [HttpGet]
         [Authorize]
         public ViewResult DeleteFavourite(int id)
         {
-            
+            string name = userManager.GetUserId(HttpContext.User);
+            Favourite favToDelete = favRepository.FavRecipe.Where(item => item.FavID == id).FirstOrDefault();
+            TempData["message"] = $"Favourite \"{favToDelete.fvname}\" has been Removed";
             favRepository.deleteFavouriteRecipe(id);
-            return View();
+            List<Favourite> favs = new List<Favourite>();
+            favs.AddRange(favRepository.FavRecipe.Where(item => item.user == name));
+            return View("AddedFavourites", favs);
         }
 
     }

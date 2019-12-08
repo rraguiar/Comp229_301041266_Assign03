@@ -7,8 +7,8 @@
         <input asp-for="fvname" />
     </div>
     <div>
-        <button type="submit">Save Review</button>
+        <button type="submit">Save Favourite</button>
         <button type="reset">Clear Fields</button>
-        <button asp-action="List">Cancel</button>
+        <button asp-controller="Recipe" asp-action="RecipeDetails" asp-route-RecipeID="@ViewBag.RecID">Cancel</button>
     </div>
 </form>
