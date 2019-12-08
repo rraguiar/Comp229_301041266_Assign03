@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Comp229_301041266_Assign03.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Comp229_301041266_Assign03.Controllers
 {
@@ -20,6 +21,7 @@ namespace Comp229_301041266_Assign03.Controllers
             => View(favRepository.FavRecipe);
 
         [HttpGet]
+        [Authorize]
         public ViewResult FavAdd(int id)
         {
             ViewBag.RecId = id;
@@ -33,6 +35,7 @@ namespace Comp229_301041266_Assign03.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         public ViewResult DeleteFavourite(int id)
         {
             
