@@ -75,6 +75,15 @@ h6 {
     font-size:xx-small;
 }
 
+#rotd { /*(recipe of the day*/
+    position: absolute;
+    top: 225px;
+    left: 535px;
+    width: 440px;
+    background-color: whitesmoke;
+    padding: 8px;
+}
+
 table {
     width: 800px;
     margin-right: auto;

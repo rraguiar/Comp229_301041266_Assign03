@@ -26,6 +26,8 @@ namespace Comp229_301041266_Assign03.Controllers
             return View(recipeRepository.Recipes.Where(item => item.RecipeID == RecipeID).FirstOrDefault());
         }
 
+        //public ViewResult RecipeDetails(string RecipeName) => View(recipeRepository.Recipes.FirstOrDefault(r => r.RecipeName == RecipeName));
+
         [Authorize]
         public ViewResult RecipeAdd()
         {

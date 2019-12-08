@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Comp229_301041266_Assign03.Models
@@ -19,6 +20,10 @@ namespace Comp229_301041266_Assign03.Models
 
         public static async void EnsurePopulated(IApplicationBuilder app)
         {
+            AppIdentityDbContext identityContext = app.ApplicationServices.GetRequiredService<AppIdentityDbContext>();
+
+            identityContext.Database.Migrate();
+
             UserManager<IdentityUser> userManager = app.ApplicationServices.GetRequiredService<UserManager<IdentityUser>>();
             //creating the seed data for user 1 -> Admin in this case
             IdentityUser user = await userManager.FindByIdAsync(generalUser1);
